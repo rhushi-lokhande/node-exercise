@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- styles -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+              <h1>Select charecter</h1>
+            </div>
+            <div class="col-xs-12">
+             <ul class="list-group">
+                <% for(var i=0; i < charecters.results.length; i++) { %>
+                    <a href="/character/<%= charecters.results[i].url.split('/').reverse()[1]+'?page='+curPage %>" class="list-group-item"><%= charecters.results[i].name %></a>
+                <% } %>
+              </ul>
+            </div>
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <span><%= charecters.count %> charecter</span>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                     <% var j=1; %>
+                        <nav>
+                          <ul class="pagination">
+                            <li class="<%= 1==curPage?'disabled':'' %> ">
+                              <a href="/character?page=<%= curPage-1 %>" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                              </a>
+                            </li>
+                            <% for(var i=0; i <= charecters.count; i+=10,j++) { %>
+                               <li class="<%= j==curPage?'active':'' %> "><a href="/character?page=<%= j %>" ><%= j %></a></li>
+                            <% } %>
+                            <li class="<%= --j==curPage?'disabled':'' %> ">
+                              <a href="/character?page=<%= ++curPage %>" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>

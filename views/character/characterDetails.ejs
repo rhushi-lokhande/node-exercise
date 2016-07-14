@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  <head>
+    <meta charset="utf-8">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- styles -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+        <br>
+            <div class="jumbotron">
+               <div class="row">
+                    <div class="col-lg-12">
+                        <h1><%= charecters.name %></h1>
+                    </div>
+                    <div class="col-lg-12">
+                        <h3>Height : <%= charecters.height %></h3>
+                        <h3>Mass : <%= charecters.mass %></h3>
+                        <h3>Hair Color : <%= charecters.hair_color %></h3>
+                        <h3>Eye Color : <%= charecters.eye_color %></h3>
+                        <h3>Skin Color : <%= charecters.skin_color %></h3>
+                        <h3>Gender : <%= charecters.gender %></h3>
+                    </div>
+                    <div class="col-lg-12">
+                    <br>
+                       <a href="/character?page=<%= curPage %>" class="btn btn-primary">Back</a>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>
